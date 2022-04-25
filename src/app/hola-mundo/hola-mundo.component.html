@@ -1,0 +1,38 @@
+<div class="hola-mundo">
+
+    <h1>hola-mundo works!</h1>
+    <h2>{{titulo}}</h2>
+
+    <div>
+        <p>Name : {{name}}</p>
+        <p>Street : {{address.street}}</p>
+        <p>City : {{address.city}}</p>
+        <p>Hobbies</p>
+        <ul>
+            <li *ngFor="let hobby of hobbies">{{hobby}}</li>
+        </ul>
+    </div>
+
+
+    <ul>
+        <li *ngFor="let usuario of usuarios">{{usuario}} - <button (click)="deleteUser(usuario)">delete  </button></li>
+
+    </ul>
+
+    <form (submit)="addUsers(newUser)">
+        <input type="text" #newUser>
+        <button>Send</button>
+
+    </form>
+    <br>
+    <form>
+        <input type="text" name="name" [(ngModel)]="nombre">
+        <input type="text" name="age" [(ngModel)]="age">
+        <button>Send</button>
+    </form>
+
+    <!-- importar import { FormsModule } from '@angular/forms'; para  [(ngModel)] en app.module -->
+
+    name : {{nombre}} <br> edad : {{age}}
+
+</div>
